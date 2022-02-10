@@ -2,5 +2,27 @@
   {
     "name": "ping",
     "description": "returns pong, for testing"
+  },
+  {
+    "name": "flip",
+    "description": "bet some money that a coin will land on heads or tails",
+    "options": [ 
+      {
+        "name": "bet",
+        "description": "amount of tokens to wager",
+        "type": 4,
+        "min_value": 0,
+        "required": true
+      },
+      {
+        "name": "guess",
+        "description": "heads or tails?",
+        "type": 3,
+        "choices": [
+          {"name": "heads", "value": "heads"},
+          {"name": "tails", "value": "tails"}
+        ] 
+      }
+    ]
   }
 ]
