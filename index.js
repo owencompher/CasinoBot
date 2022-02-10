@@ -18,7 +18,7 @@ client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
 
     if (client.commands.has(interaction.commandName)) {
-        await client.commands.get(interaction.commandName).execute(interaction);
+        await client.commands.get(interaction.commandName).execute({interaction: interaction, client: client, database: db});
     }
 });
 
