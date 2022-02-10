@@ -1,0 +1,6 @@
+[
+  {
+    "name": "ping",
+    "description": "returns pong, for testing"
+  }
+]
