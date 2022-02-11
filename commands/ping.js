@@ -1,6 +1,6 @@
 module.exports = {
     key: "ping",
-    execute(interaction) {
-        interaction.reply("pong");
+    execute(arg) {
+        arg.interaction.reply("pong");
     }
 }

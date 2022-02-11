@@ -24,5 +24,16 @@
         ] 
       }
     ]
+  },
+  {
+    "name": "balance",
+    "description": "check your balance, or someone else's",
+    "options": [
+      {
+        "name": "user",
+        "description": "the user you want to check",
+        "type": 6
+      }
+    ]
   }
 ]

@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "discord.js": "^13.6.0"
+    "discord.js": "^13.6.0",
+    "nedb": "^1.8.0"
   },
   "devDependencies": {
     "@discordjs/rest": "^0.3.0",
