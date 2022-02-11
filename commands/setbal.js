@@ -1,4 +1,5 @@
 module.exports = {
+    key: 'setbal',
     execute(arg) {
         const int = arg.interaction;
         const db = arg.database;
