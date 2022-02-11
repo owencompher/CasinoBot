@@ -14,6 +14,17 @@ client.on("ready",()=>{
     console.log("CasinoBot Online!");
 })
 
+client.on('guildMemberAdd', member => {
+    db.findOne({_id: member.user.id}, (err, user) => {
+        if (user) {
+            console.log(member.user.id + ' was already on the database');
+        } else {
+            db.insert({_id: member.user.id, bal: 1000}, ()=>{});
+            console.log(member.user.id + ' was added to the database');
+        }
+    })
+})
+
 client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
 
