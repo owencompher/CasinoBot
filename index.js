@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const client = new Discord.Client({intents:[Discord.Intents.FLAGS.GUILDS]});
+const client = new Discord.Client({intents:["GUILDS", "GUILD_MEMBERS"]});
 const token = require("./token.json")
 
 const fs = require("fs");
@@ -9,6 +9,9 @@ for(const file of commandFiles){
     const command = require(`./commands/${file}`);
     client.commands.set(command.key, command);
 }
+
+const Datasource = require('nedb');
+const db = new Datasource({filename: './database', autoload: true});
 
 client.on("ready",()=>{
     console.log("CasinoBot Online!");
@@ -29,7 +32,9 @@ client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
 
     if (client.commands.has(interaction.commandName)) {
-        await client.commands.get(interaction.commandName).execute({interaction: interaction, client: client, database: db});
+        try {
+            await client.commands.get(interaction.commandName).execute({interaction: interaction, client: client, database: db});
+        } catch (err) { console.log(err); }
     }
 });
 
