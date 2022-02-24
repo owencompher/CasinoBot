@@ -5,7 +5,7 @@
   },
   {
     "name": "flip",
-    "description": "bet some money that a coin will land on heads or tails",
+    "description": "bet some chips that a coin will land on heads or tails",
     "options": [ 
       {
         "name": "bet",
@@ -53,6 +53,52 @@
         "type": 4,
         "min_value": 0,
         "required": true
+      }
+    ]
+  },
+  {
+    "name": "info",
+    "description": "gets the user info and sends in an embed",
+    "options": [
+      {
+        "name": "user",
+        "description": "the user you want to check",
+        "type": 6
+      }
+    ]
+  },
+	{
+		"name":"dailyspin",
+		"description": "a daily wheel spin to earn special rewards"
+	},
+	{
+		"name":"baltop",
+		"description":"shows the top 25 users based on balance"
+	},
+	{
+    "name":"boxracing",
+    "description": "bet on which box will reach the end first",
+    "options":[
+      {
+        "name": "bet",
+        "description": "amount of tokens to wager",
+        "type": 4,
+        "min_value": 0,
+        "required": true
+      },
+      {
+        "name": "guess",
+        "description": "choose a color",
+        "type": 3,
+        "required": true,
+        "choices": [
+          {"name": "red", "value": "red"},
+          {"name": "orange", "value": "orange"},
+          {"name": "yellow", "value": "yellow"},
+          {"name": "green", "value": "green"},
+          {"name": "blue", "value": "blue"},
+          {"name": "purple", "value": "purple"}
+        ]
       }
     ]
   }
