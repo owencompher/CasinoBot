@@ -1,0 +1,34 @@
+db getter + setter func
+try gifs for animated things
+db template and updater {(new doc fields),(datastore instead of datasource),(arrays in fields for subfields)}
+work on multiplayer for games like poker and blackjack
+
+basic admin commands {
+	set bal
+	set stats
+	create data base id
+	basic getters and setters for all values
+}
+
+
+design? {
+  levels
+	clubs
+	daily objectives
+	games{
+		flip
+		boxracing
+		slots
+		blackjack
+		poker
+	}
+	club objectives
+	serverwide challenges
+	profile customization
+}
+
+implement design {
+  chips instead of $
+  daily wheel
+	basic info commands
+}
