@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client({intents:["GUILDS", "GUILD_MEMBERS"]});
-const token = require("./token.json")
+const token = process.env['TOKEN'];
 
 const fs = require("fs");
 client.commands = new Discord.Collection();
