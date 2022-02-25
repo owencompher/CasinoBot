@@ -14,7 +14,7 @@ client.levels = [50,125,200,300,500,750,1000,1500,2000,3500,5000,7500,10000,1500
     100000,200000,300000,400000,500000,600000,700000,800000,900000,1000000,1100000,1200000];
 
 const Datasource = require('nedb');
-const db = new Datasource({filename: './database', autoload: true});
+const userDB = new Datasource({filename: './database/users', autoload: true});
 
 client.on("ready",()=>{
     console.log("CasinoBot Online!");
@@ -25,7 +25,14 @@ client.on('guildMemberAdd', member => {
         if (user) {
             console.log(member.user.id + ' was already on the database');
         } else {
-            db.insert({_id: member.user.id, bal: 1000}, ()=>{});
+            b.insert({"_id":"template","bal":1000,"level":0,"levelExp":0,
+                      "flip":{
+                        "reps":0,"winnings":0,"best":0
+                      },
+                      "slot":{
+                        "reps":0,"winnings":0,"best":0
+                      },
+                       "lastSpin":0}, ()=>{});
             console.log(member.user.id + ' was added to the database');
         }
     })
@@ -36,7 +43,7 @@ client.on('interactionCreate', async interaction => {
 
     if (client.commands.has(interaction.commandName)) {
         try {
-            await client.commands.get(interaction.commandName).execute({interaction: interaction, client: client, database: db, Discord: Discord});
+            await client.commands.get(interaction.commandName).execute({interaction: interaction, client: client, database: userDB, Discord: Discord});
         } catch (err) { console.log(err); }
     }
 });
