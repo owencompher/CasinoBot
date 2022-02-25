@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "start": "node .",
+    "cmd": "node commandUpdater.js",
+    "db": "node dbUpdater.js"
+  },
   "dependencies": {
     "discord.js": "^13.6.0",
     "nedb": "^1.8.0"
